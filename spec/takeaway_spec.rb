@@ -2,18 +2,33 @@ require "takeaway"
 
 describe Takeaway do 
 	let(:takeaway) {Takeaway.new}
+
+	it "welcomes the customers" do 
+		takeaway.print_welcome_message
+	end
 	
-	it "has a menu with prices" do
-		expect(takeaway.menu.count).to eq 10
+	it "is initialized with a menu" do
+		takeaway.menu	
+	end
+
+	it "prints the menu" do 
+		takeaway.print_menu
+	end
+
+	xit "has no orders when initialized" do 
+		expect(takeaway.quantity).to eq
+	end
+
+	it "makes the sum of two Tiramisu" do
+		expect(takeaway.order).to eq 10
 	end
 
 end
 
 
 
-# Implement the following functionality:
-# list of dishes with prices
-# placing the order by giving the list of dishes, their quantities and a number that should be the exact total. If the sum is not correct the method should raise an error, otherwise the customer is sent a text saying that the order was placed successfully and that it will be delivered 1 hour from now, e.g. "Thank you! Your order was placed and will be delivered before 18:52".
+# placing the order by giving the list of dishes, their quantities and a number
+# If the sum is not correct the method should raise an error, otherwise the customer is sent a text saying that the order was placed successfully and that it will be delivered 1 hour from now, e.g. "Thank you! Your order was placed and will be delivered before 18:52".
 # The text sending functionality should be implemented using Twilio API. You'll need to register for it. It’s free.
 # Use twilio-ruby gem to access the API
 # Use a Gemfile to manage your gems
