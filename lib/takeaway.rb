@@ -33,7 +33,7 @@ class Takeaway
 
 	def calculate_order
 		@quantity = gets.chomp
-			hash = MENU.map do |food, price| 
+			MENU.map do |food, price| 
 			[food, price * @quantity]
 		end
 	end
