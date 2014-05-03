@@ -2,25 +2,38 @@ require "takeaway"
 
 describe Takeaway do 
 	let(:takeaway) {Takeaway.new}
+	let(:subtotal) {double :subtotal}
+	let(:new_menu) {double :new_menu}
+		MENU = { 
+				"Pizza Buffalina" => [15],
+				"Mozzarella Sticks" => [5],
+				"Pizza Patate" => [12],
+				"Pizza Funghi" => [12],
+				"Pizza Olive" => [12],
+				"Tiramisu" => [5],
+				"Cheese cake" => [5],
+				"Limoncello" => [8],
+				"Negroni" => [4],
+				"Spritz" => [4],
+		}
+
 
 	it "welcomes the customers" do 
 		takeaway.print_welcome_message
 	end
 	
-	it "is initialized with a menu" do
-		takeaway.menu	
+	it "is initialized with a menu with 10 dishes" do
+		takeaway.menu
+		expect(takeaway.menu.count).to eq 10
 	end
 
 	it "prints the menu" do 
 		takeaway.print_menu
 	end
 
-	xit "has no orders when initialized" do 
-		expect(takeaway.quantity).to eq
-	end
-
-	it "makes the sum of two Tiramisu" do
-		expect(takeaway.order).to eq 10
+	it "knows that the price of two tiramisu is 10" do
+		takeaway.calculate_order
+		expect(hash['Tiramisu']).to eq 10
 	end
 
 end
