@@ -9,7 +9,7 @@ This is my fourth week project at [Makers Academy] (http://www.makersacademy.com
 The goal of the exercise is to create a takeaway system with a menu, able to send an sms confirmation after the checkout.
 
 Here is a screenshot of the sms confirmation sent through Twilio Api.
-![alt tag]()
+![alt tag](https://github.com/stefaniacardenas/takeaway/blob/master/twilioAPI.png)
 
 
 Tasks
