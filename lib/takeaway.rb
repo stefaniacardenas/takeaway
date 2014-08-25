@@ -1,6 +1,6 @@
 class Takeaway
 
-	attr_accessor :menu
+	attr_accessor :menu , :bill
 
 	def initialize
 		@menu = { 
@@ -15,6 +15,23 @@ class Takeaway
 			"Negroni" => 4,
 			"Spritz" => 4,
 		}
+		@bill = 0
+	end
+
+	def order(dish, quantity)
+		quantity.times { list << dish }
+		sum = list.map {|dish| menu[dish] }
+		@bill = sum.inject { | memo, price | memo + price }
+	end
+
+	def list
+		@list ||= []
+	end
+
+	def view_order
+		@thing = @list.each do |dish_name , n |
+			"#{dish_name} £#{@bill}"
+		end.join("\n")	
 	end
 
 end

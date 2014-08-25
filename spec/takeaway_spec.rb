@@ -15,6 +15,18 @@ describe Takeaway do
 
 	end
 
+	context 'Order' do 
+		it "can add dishes and quantities to a list" do
+			takeaway.order('Tiramisu', 2)
+			expect(takeaway.list).to eq ['Tiramisu','Tiramisu']
+		end
+
+		it "can calculate the total payment due" do 
+			takeaway.order('Tiramisu', 2)
+			takeaway.order('Pizza Buffalina', 2)
+			expect(takeaway.bill).to eq 40
+		end
+	end
 
 end
 
