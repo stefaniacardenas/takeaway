@@ -39,18 +39,10 @@ describe Takeaway do
 			takeaway.order('Tiramisu', 2)
 			takeaway.order('Pizza Buffalina', 2)
 			takeaway.checkout(40)
-			takeaway.stub(:send_sms).and_return "Order confirmed! Thanks for your purchuse. You should receive an sms confirmation soon."
-			expect(takeaway.confirm_order).to eq "Order confirmed! Thanks for your purchuse. You should receive an sms confirmation soon."
+			allow(takeaway).to receive (:send_sms)
+			# takeaway.stub(:send_sms).and_return "Order confirmed! Thanks for your purchuse. You should receive an sms confirmation soon."
+			# expect(takeaway.confirm_order).to eq "Order confirmed! Thanks for your purchuse. You should receive an sms confirmation soon."
 		end
-	end
-
-		
+	end		
 
 end
-
-
-
-# If the sum is not correct the method should raise an error, 
-# otherwise the customer is sent a text saying that the order was placed successfully and that it will be delivered 1 hour from now, e.g. "Thank you! Your order was placed and will be delivered before 18:52".
-# Make sure that your Takeaway class is thoroughly tested and that you use mocks and/or stubs, as necessary to not to send texts when your tests are run
-# However, if your Takeaway class is loaded into IRB and the order is placed, the text should actually be sent

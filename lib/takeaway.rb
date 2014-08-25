@@ -1,4 +1,4 @@
-require_relative '../send_sms.rb'
+require_relative 'send_sms.rb'
 
 class Takeaway
 
@@ -44,7 +44,5 @@ class Takeaway
 		puts "Order confirmed! Thanks for your purchuse. You should receive an sms confirmation soon." 
 		send_sms
 	end
-
-
 
 end
