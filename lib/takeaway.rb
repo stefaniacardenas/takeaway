@@ -1,6 +1,10 @@
+require_relative '../send_sms.rb'
+
 class Takeaway
 
 	attr_accessor :menu , :bill
+
+	include Sms
 
 	def initialize
 		@menu = { 
@@ -32,8 +36,13 @@ class Takeaway
 		if customer_input != @bill
 			raise RuntimeError, "You paid the wrong amount. Please try again."
 		else
-			send_sms
+			confirm_order
 		end
+	end
+
+	def confirm_order
+		puts "Order confirmed! Thanks for your purchuse. You should receive an sms confirmation soon." 
+		send_sms
 	end
 
 

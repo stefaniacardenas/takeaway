@@ -34,7 +34,17 @@ describe Takeaway do
 			takeaway.order('Pizza Buffalina', 2)
 			expect {takeaway.checkout(15)}.to raise_error RuntimeError, "You paid the wrong amount. Please try again."
 		end
+
+		it "sends a confirmation via sms" do
+			takeaway.order('Tiramisu', 2)
+			takeaway.order('Pizza Buffalina', 2)
+			takeaway.checkout(40)
+			takeaway.stub(:send_sms).and_return "Order confirmed! Thanks for your purchuse. You should receive an sms confirmation soon."
+			expect(takeaway.confirm_order).to eq "Order confirmed! Thanks for your purchuse. You should receive an sms confirmation soon."
+		end
 	end
+
+		
 
 end
 
