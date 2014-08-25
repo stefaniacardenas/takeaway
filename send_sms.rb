@@ -1,11 +1,14 @@
-require 'rubygems'
-require 'twilio-ruby'
-
-account_sid = 'AC10f596454dd3786204276170a2db36a7'
-auth_token = '0ef4d81a536d20845b1d63a579520b4b'
-@client = Twilio::REST::Client.new account_sid, auth_token
-
-message = @client.account.sms.messages.create(:body => "Hello Stefania <3",
-    :to => "+447950289197",     # Replace with your phone number
-    :from => "+441913280559")   # Replace with your Twilio number
-puts message.sid
+require 'twilio-ruby' 
+ 
+# put your own credentials here 
+account_sid = 'ACa766fe579b7dbc5572b1d67fd9dd7bf5' 
+auth_token = '87f670264ae5787512425e835cb81dae' 
+ 
+# set up a client to talk to the Twilio REST API 
+@client = Twilio::REST::Client.new account_sid, auth_token 
+ 
+@client.account.messages.create({
+	:from => '+441527962310', 
+	:to => '07950289197', 
+	:body => 'Thank you! Your order was placed successfully and will be delivered within 1 hour',  
+})

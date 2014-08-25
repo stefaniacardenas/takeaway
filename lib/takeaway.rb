@@ -28,10 +28,14 @@ class Takeaway
 		@list ||= []
 	end
 
-	def view_order
-		@thing = @list.each do |dish_name , n |
-			"#{dish_name} £#{@bill}"
-		end.join("\n")	
+	def checkout(customer_input)
+		if customer_input != @bill
+			raise RuntimeError, "You paid the wrong amount. Please try again."
+		else
+			send_sms
+		end
 	end
+
+
 
 end
