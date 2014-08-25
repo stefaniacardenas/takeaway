@@ -6,16 +6,15 @@ Overview
 
 This is my fourth week project at [Makers Academy] (http://www.makersacademy.com/‎).
 
-The goal of the exercise is to create a takeaway system with a menu, able to send an sms confirmation after the checkout.
+The goal of the exercise is to create a takeaway system. It has a menu and it's able to send an sms with a confirmation for your successful order.
 
 Here is a screenshot of the sms confirmation sent through Twilio Api.
 ![alt tag](https://github.com/stefaniacardenas/takeaway/blob/master/twilioAPI.png)
 
-
 Tasks
 ------
-*Write a class Takeaway.
 Implement the following functionality:
+* Write a class Takeaway.
 * List of dishes with prices
 * Placing the order by giving the list of dishes, their quantities and a number that should be the exact total.
 * Raise an error if the sum is not correct
@@ -33,7 +32,7 @@ Subjects covered
 -----------------
 
 * Object-oriented programming
-* Pure Ruby
+* Ruby
 * Data structures
 * Rspec mocks and stub
 * Test-driven development
